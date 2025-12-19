@@ -55,11 +55,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1A7FB0C411BE4DB1B33CCD8E45AD9BCB }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D096803B0D724B11BC7B8DB0D3192200 }}
 
-      - name: Deploy to Azure Web App
+      - name: Deploy to Staging Slot
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'aspnetcore-kleo'
-          slot-name: 'Production'
+          slot-name: 'staging'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_STAGING }}
           package: .
+
           
