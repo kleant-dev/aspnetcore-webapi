@@ -14,14 +14,16 @@ public class StudentController: ControllerBase
             {
                 Age = 15,
                 Name = "John Doe",
-                Grade = 10
+                Grade = 10,
+                Credits = 30
             },
 
             new Student()
             {
                 Name = "John Doe",
                 Age = 20,
-                Grade = 10
+                Grade = 10,
+                Credits = 40
             }
         ];
         return Ok(students);
